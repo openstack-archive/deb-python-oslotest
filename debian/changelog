@@ -1,0 +1,5 @@
+python-oslotest (0.1-1) experimental; urgency=low
+
+  * Initial release. (Closes: #742310)
+
+ -- Thomas Goirand <zigo@debian.org>  Fri, 21 Mar 2014 17:25:32 +0800
