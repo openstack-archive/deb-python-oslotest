@@ -46,10 +46,10 @@ Depends: python-fixtures (>= 0.3.14),
          python-mox (>= 0.5.3),
          python-subunit (>= 0.0.18),
          python-testrepository (>= 0.0.18),
+         python-testscenarios (>= 0.4),
          python-testtools (>= 0.9.34),
          subunit (>= 0.0.18),
          testrepository (>= 0.0.18),
-         testscenarios (>= 0.4),
          ${misc:Depends},
          ${python:Depends}
 Description: OpenStack test framework - Python 2.x
