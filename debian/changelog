@@ -6,6 +6,7 @@ python-oslotest (1.0.0-1) unstable; urgency=medium
   [ Thomas Goirand ]
   * New upstream release.
   * Uploading to unstable.
+  * Fixed (build-)depends for this release.
 
  -- Thomas Goirand <zigo@debian.org>  Fri, 18 Apr 2014 05:54:51 +0000
 
