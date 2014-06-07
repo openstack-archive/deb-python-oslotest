@@ -1,3 +1,9 @@
+python-oslotest (1.0.0-2) unstable; urgency=medium
+
+  * build-depends: dropped python-hacking, added python{3,}-pbr.
+
+ -- Thomas Goirand <zigo@debian.org>  Sun, 08 Jun 2014 00:58:30 +0800
+
 python-oslotest (1.0.0-1) unstable; urgency=medium
 
   [ Thomas Bechtold ]
