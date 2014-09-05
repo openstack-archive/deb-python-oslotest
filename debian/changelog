@@ -1,3 +1,10 @@
+python-oslotest (1.1.0.0~a1-1) experimental; urgency=medium
+
+  * New upstream release.
+  * Uploading to experimental before Jessie's freeze.
+
+ -- Thomas Goirand <zigo@debian.org>  Fri, 05 Sep 2014 15:20:43 +0800
+
 python-oslotest (1.0.0-2) unstable; urgency=medium
 
   * build-depends: dropped python-hacking, added python{3,}-pbr.
