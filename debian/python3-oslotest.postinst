@@ -1,0 +1,12 @@
+#!/bin/sh
+
+set -e
+
+if [ "$1" = "configure" ] ; then
+	update-alternatives --install /usr/bin/oslo_debug_helper oslo_debug_helper /usr/bin/python3-oslo_debug_helper 200
+fi
+
+#DEBHELPER#
+
+exit 0
+

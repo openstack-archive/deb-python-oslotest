@@ -1,0 +1,12 @@
+#!/bin/sh
+
+set -e
+
+if [ "$1" = "remove" ] ; then
+	update-alternatives --remove oslo_debug_helper /usr/bin/python3-oslo_debug_helper
+fi
+
+#DEBHELPER#
+
+exit 0
+
