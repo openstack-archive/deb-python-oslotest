@@ -1,0 +1,62 @@
+Description: Fix import of mock in Python 3.2
+ The "from six.moves import mock" fails in Python 3.2, this patch fixes it.
+Author: Thomas Goirand <zigo@debian.org>
+Forwarded: not-needed
+Last-Update: 2014-09-17
+
+--- python-oslotest-1.1.0.0~a2.orig/tests/unit/test_base.py
++++ python-oslotest-1.1.0.0~a2/tests/unit/test_base.py
+@@ -15,7 +15,10 @@
+ import logging
+ import unittest
+ 
+-from six.moves import mock
++try:
++    from six.moves import mock
++except:
++    import mock
+ import testtools
+ 
+ from oslotest import base
+--- python-oslotest-1.1.0.0~a2.orig/tests/unit/test_mockpatch.py
++++ python-oslotest-1.1.0.0~a2/tests/unit/test_mockpatch.py
+@@ -13,7 +13,10 @@
+ #    under the License.
+ 
+ 
+-from six.moves import mock
++try:
++    from six.moves import mock
++except:
++    import mock
+ 
+ from oslotest import base
+ from oslotest import mockpatch
+--- python-oslotest-1.1.0.0~a2.orig/oslotest/base.py
++++ python-oslotest-1.1.0.0~a2/oslotest/base.py
+@@ -20,7 +20,10 @@ import os
+ import tempfile
+ 
+ import fixtures
+-from six.moves import mock
++try:
++    from six.moves import mock
++except:
++    import mock
+ import testtools
+ 
+ _TRUE_VALUES = ('True', 'true', '1', 'yes')
+--- python-oslotest-1.1.0.0~a2.orig/oslotest/mockpatch.py
++++ python-oslotest-1.1.0.0~a2/oslotest/mockpatch.py
+@@ -16,7 +16,10 @@
+ # under the License.
+ 
+ import fixtures
+-from six.moves import mock
++try:
++    from six.moves import mock
++except:
++    import mock
+ 
+ 
+ class PatchObject(fixtures.Fixture):
