@@ -1,4 +1,4 @@
-python-oslotest (1.1.0.0~a2-2) experimental; urgency=medium
+python-oslotest (1.1.0.0~a2-1) experimental; urgency=medium
 
   * New upstream release.
   * Updated (build-)depends for this release.
