@@ -20,9 +20,9 @@ override_dh_install:
 		python$$pyvers setup.py install --install-layout=deb \
 			--root $(CURDIR)/debian/python3-oslotest; \
         done
-	mv $(CURDIR)/debian/python-oslotest/usr/bin/oslo_debug_helper.sh \
+	mv $(CURDIR)/debian/python-oslotest/usr/bin/oslo_debug_helper \
 		$(CURDIR)/debian/python-oslotest/usr/bin/python2-oslo_debug_helper
-	mv $(CURDIR)/debian/python3-oslotest/usr/bin/oslo_debug_helper.sh \
+	mv $(CURDIR)/debian/python3-oslotest/usr/bin/oslo_debug_helper \
 		$(CURDIR)/debian/python3-oslotest/usr/bin/python3-oslo_debug_helper
 	sed -i s/python/python3/g $(CURDIR)/debian/python3-oslotest/usr/bin/python3-oslo_debug_helper
 

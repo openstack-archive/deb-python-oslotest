@@ -1,6 +1,9 @@
 python-oslotest (1.2.0-1) experimental; urgency=medium
 
   * New upstream release.
+  * Rebases the six.moves patch.
+  * Upstream removed the .sh extention for the oslo_debug_helper, updates the
+    debian/rules accordingly.
 
  -- Thomas Goirand <zigo@debian.org>  Wed, 12 Nov 2014 13:28:36 +0000
 
