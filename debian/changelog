@@ -1,3 +1,9 @@
+python-oslotest (1.2.0-1) experimental; urgency=medium
+
+  * New upstream release.
+
+ -- Thomas Goirand <zigo@debian.org>  Wed, 12 Nov 2014 13:28:36 +0000
+
 python-oslotest (1.1.0.0-1) experimental; urgency=medium
 
   * New upstream release.
