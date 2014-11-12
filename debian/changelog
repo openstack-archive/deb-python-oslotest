@@ -4,6 +4,8 @@ python-oslotest (1.2.0-1) experimental; urgency=medium
   * Rebases the six.moves patch.
   * Upstream removed the .sh extention for the oslo_debug_helper, updates the
     debian/rules accordingly.
+  * Added dh-python as build-depends.
+  * Now using Build-Depends-Indep too, and moved many build-depends there.
 
  -- Thomas Goirand <zigo@debian.org>  Wed, 12 Nov 2014 13:28:36 +0000
 
