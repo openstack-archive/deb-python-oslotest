@@ -5,6 +5,7 @@ set -e
 if [ "$1" = "remove" ] || [ "$1" = "disappear" ]; then
 	update-alternatives --remove oslo_debug_helper /usr/bin/python2-oslo_debug_helper
 	update-alternatives --remove oslo_run_pre_release_tests /usr/bin/python2-oslo_run_pre_release_tests
+	update-alternatives --remove oslo_run_cross_tests /usr/bin/python2-oslo_run_cross_tests
 fi
 
 #DEBHELPER#

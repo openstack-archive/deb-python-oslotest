@@ -3,8 +3,9 @@
 set -e
 
 if [ "$1" = "configure" ] ; then
-	update-alternatives --install /usr/bin/oslo_debug_helper oslo_debug_helper /usr/bin/python2-oslo_debug_helper 300
-	update-alternatives --install /usr/bin/oslo_run_pre_release_tests oslo_run_pre_release_tests /usr/bin/python2-oslo_run_pre_release_tests 300
+	update-alternatives --install /usr/bin/oslo_debug_helper		oslo_debug_helper		/usr/bin/python2-oslo_debug_helper 300
+	update-alternatives --install /usr/bin/oslo_run_pre_release_tests	oslo_run_pre_release_tests	/usr/bin/python2-oslo_run_pre_release_tests 300
+	update-alternatives --install /usr/bin/oslo_run_cross_tests 		oslo_run_cross_tests		/usr/bin/python2-oslo_run_cross_tests 300
 fi
 
 #DEBHELPER#
