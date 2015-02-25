@@ -36,7 +36,7 @@ Build-Depends-Indep: python-coverage (>= 3.6),
                      python3-testtools (>= 0.9.36),
                      subunit (>= 0.0.18),
                      testrepository (>= 0.0.18)
-Standards-Version: 3.9.5
+Standards-Version: 3.9.6
 Vcs-Browser: http://anonscm.debian.org/gitweb/?p=openstack/python-oslotest.git
 Vcs-Git: git://anonscm.debian.org/openstack/python-oslotest.git
 Homepage: http://launchpad.net/oslo
