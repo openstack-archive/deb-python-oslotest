@@ -1,3 +1,9 @@
+python-oslotest (1.5.0-1) UNRELEASED; urgency=medium
+
+  * New upstream release.
+
+ -- Thomas Goirand <zigo@debian.org>  Wed, 25 Feb 2015 10:28:33 +0100
+
 python-oslotest (1.2.0-2) experimental; urgency=medium
 
   * Removed extra space in long desc of python-oslotest-doc (Closes: #772583).
