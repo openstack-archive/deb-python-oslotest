@@ -1,4 +1,4 @@
-python-oslotest (1.5.0-1) UNRELEASED; urgency=medium
+python-oslotest (1.5.1-1) UNRELEASED; urgency=medium
 
   * New upstream release.
   * Updated a few versions for (build)-depends.
