@@ -4,8 +4,8 @@ Author: Thomas Goirand <zigo@debian.org>
 Forwarded: no
 Last-Update: 2014-11-12
 
---- python-oslotest-1.2.0.orig/oslotest/base.py
-+++ python-oslotest-1.2.0/oslotest/base.py
+--- a/oslotest/base.py
++++ b/oslotest/base.py
 @@ -21,7 +21,10 @@ import tempfile
  
  import fixtures
@@ -18,8 +18,8 @@ Last-Update: 2014-11-12
  import testtools
  
  _TRUE_VALUES = ('True', 'true', '1', 'yes')
---- python-oslotest-1.2.0.orig/oslotest/mockpatch.py
-+++ python-oslotest-1.2.0/oslotest/mockpatch.py
+--- a/oslotest/mockpatch.py
++++ b/oslotest/mockpatch.py
 @@ -16,7 +16,10 @@
  # under the License.
  
@@ -31,9 +31,9 @@ Last-Update: 2014-11-12
 +    import mock
  
  
- class PatchObject(fixtures.Fixture):
---- python-oslotest-1.2.0.orig/oslotest/moxstubout.py
-+++ python-oslotest-1.2.0/oslotest/moxstubout.py
+ class _Base(fixtures.Fixture):
+--- a/oslotest/moxstubout.py
++++ b/oslotest/moxstubout.py
 @@ -16,7 +16,10 @@
  # under the License.
  
@@ -46,8 +46,8 @@ Last-Update: 2014-11-12
  
  
  class MoxStubout(fixtures.Fixture):
---- python-oslotest-1.2.0.orig/tests/unit/test_base.py
-+++ python-oslotest-1.2.0/tests/unit/test_base.py
+--- a/tests/unit/test_base.py
++++ b/tests/unit/test_base.py
 @@ -19,7 +19,10 @@ import os
  import unittest
  
@@ -60,8 +60,8 @@ Last-Update: 2014-11-12
  import testtools
  
  from oslotest import base
---- python-oslotest-1.2.0.orig/tests/unit/test_mockpatch.py
-+++ python-oslotest-1.2.0/tests/unit/test_mockpatch.py
+--- a/tests/unit/test_mockpatch.py
++++ b/tests/unit/test_mockpatch.py
 @@ -13,7 +13,10 @@
  #    under the License.
  
