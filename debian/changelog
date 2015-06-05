@@ -1,3 +1,9 @@
+python-oslotest (1:1.6.0-2) experimental; urgency=medium
+
+  * Bump epoch to allow resync with Ubuntu.
+
+ -- James Page <james.page@ubuntu.com>  Fri, 05 Jun 2015 09:50:48 +0100
+
 python-oslotest (1.6.0-1) experimental; urgency=medium
 
   * Team upload.
