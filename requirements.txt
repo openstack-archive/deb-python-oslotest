@@ -2,8 +2,6 @@
 # of appearance. Changing the order has an impact on the overall integration
 # process, which may cause wedges in the gate later.
 
-pbr>=0.6,!=0.7,<1.0
-discover
 fixtures>=0.3.14
 python-subunit>=0.0.18
 six>=1.9.0
@@ -12,3 +10,4 @@ testscenarios>=0.4
 testtools>=0.9.36,!=1.2.0
 mock>=1.0
 mox3>=0.7.0
+os-client-config>=1.2.0
