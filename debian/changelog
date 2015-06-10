@@ -1,3 +1,12 @@
+python-oslotest (1:1.7.0-1) UNRELEASED; urgency=medium
+
+  * Team upload.
+  * New upstream release.
+    - d/control: Add BD on python{3}-os-client-config.
+    - d/p/*: Refresh.
+
+ -- James Page <james.page@ubuntu.com>  Wed, 10 Jun 2015 17:13:33 +0100
+
 python-oslotest (1:1.6.0-2) experimental; urgency=medium
 
   * Bump epoch to allow resync with Ubuntu.

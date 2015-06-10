@@ -32,20 +32,6 @@ Last-Update: 2014-11-12
  
  
  class _Base(fixtures.Fixture):
---- a/oslotest/moxstubout.py
-+++ b/oslotest/moxstubout.py
-@@ -16,7 +16,10 @@
- # under the License.
- 
- import fixtures
--from six.moves import mox
-+try:
-+    from six.moves import mox
-+except:
-+    import mox
- 
- 
- class MoxStubout(fixtures.Fixture):
 --- a/tests/unit/test_base.py
 +++ b/tests/unit/test_base.py
 @@ -19,7 +19,10 @@ import os
