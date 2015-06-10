@@ -1,4 +1,4 @@
-python-oslotest (1:1.7.0-1) UNRELEASED; urgency=medium
+python-oslotest (1:1.7.0-1) experimental; urgency=medium
 
   * Team upload.
   * New upstream release.
@@ -6,7 +6,7 @@ python-oslotest (1:1.7.0-1) UNRELEASED; urgency=medium
     - d/p/*: Refresh.
   * Update watch file to use Debian pypi redirector.
 
- -- James Page <james.page@ubuntu.com>  Wed, 10 Jun 2015 17:13:33 +0100
+ -- James Page <james.page@ubuntu.com>  Wed, 10 Jun 2015 17:19:41 +0100
 
 python-oslotest (1:1.6.0-2) experimental; urgency=medium
 
