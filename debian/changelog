@@ -1,3 +1,10 @@
+python-oslotest (1:1.7.0-2) experimental; urgency=medium
+
+  * Removed python{3}-os-client-config form build-dependencies, as it makes a
+    build-dependency loop.
+
+ -- Thomas Goirand <zigo@debian.org>  Tue, 07 Jul 2015 19:30:03 +0200
+
 python-oslotest (1:1.7.0-1) experimental; urgency=medium
 
   * Team upload.
