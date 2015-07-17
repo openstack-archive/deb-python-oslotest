@@ -1,0 +1,43 @@
+From 2c02e3a5b14590207dc61b4be2ce9eae87643e2f Mon Sep 17 00:00:00 2001
+From: Doug Hellmann <doug@doughellmann.com>
+Date: Fri, 10 Jul 2015 13:33:57 +0000
+Subject: [PATCH] Fix use of mock
+
+Use proper mock assertion methods.
+
+Change-Id: I1dfc3ece6df312b0fa3172421583a1d0b8304a47
+---
+ requirements.txt        | 3 ++-
+ tests/unit/test_base.py | 6 +++---
+ tests/unit/test_log.py  | 8 ++++----
+ 3 files changed, 9 insertions(+), 8 deletions(-)
+
+--- a/tests/unit/test_base.py
++++ b/tests/unit/test_base.py
+@@ -52,7 +52,7 @@ class TestBaseTestCase(testtools.TestCas
+         tc = self.FakeTestCase("test_fake_test")
+         tc._fake_logs()
+         env_get_mock.assert_any_call('OS_LOG_CAPTURE')
+-        env_get_mock.assert_any_calls('OS_DEBUG')
++        env_get_mock.assert_any_call('OS_DEBUG')
+         self.assertEqual(fixture_mock.call_count, 0)
+ 
+     @mock.patch('os.environ.get')
+@@ -63,7 +63,7 @@ class TestBaseTestCase(testtools.TestCas
+         tc = self.FakeTestCase("test_fake_test")
+         tc._fake_logs()
+         env_get_mock.assert_any_call('OS_LOG_CAPTURE')
+-        env_get_mock.assert_any_calls('OS_DEBUG')
++        env_get_mock.assert_any_call('OS_DEBUG')
+         basic_logger_mock.assert_called_once_with(format=base._LOG_FORMAT,
+                                                   level=logging.DEBUG)
+ 
+@@ -76,7 +76,7 @@ class TestBaseTestCase(testtools.TestCas
+         tc = self.FakeTestCase("test_fake_test")
+         tc._fake_logs()
+         env_get_mock.assert_any_call('OS_LOG_CAPTURE')
+-        env_get_mock.assert_any_calls('OS_DEBUG')
++        env_get_mock.assert_any_call('OS_DEBUG')
+         self.assertEqual(fixture_mock.call_count, 1)
+ 
+     def test_mock_patch_cleanup_on_teardown(self):

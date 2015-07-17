@@ -1,3 +1,14 @@
+python-oslotest (1:1.7.0-3) UNRELEASED; urgency=medium
+
+  * d/p/fixtures-1.3-compat.patch: Cherry pick fix from upstream VCS to
+    resolve compatibility with fixtures >= 1.3.1.
+  * d/p/python-3.5-compat.patch: Cherry pick fix from upstream VCS for
+    compatiblity with Python 3.5 (LP: #1475544).
+  * d/p/fix-import-of-mock.patch: Dropped, as python 3.2 is no longer a
+    target.
+
+ -- James Page <james.page@ubuntu.com>  Fri, 17 Jul 2015 10:10:30 +0100
+
 python-oslotest (1:1.7.0-2) experimental; urgency=medium
 
   * Removed python{3}-os-client-config form build-dependencies, as it makes a
