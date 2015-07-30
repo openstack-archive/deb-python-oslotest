@@ -15,12 +15,12 @@
 
 """Common utilities used in testing"""
 
-import logging
-import os
-import tempfile
-
 import fixtures
-import six
+from oslotest import createfile
+from oslotest import log
+from oslotest import output
+from oslotest import timeout
+
 from six.moves import mock
 import testtools
 
@@ -45,7 +45,8 @@ class BaseTestCase(testtools.TestCase):
     it produces.
 
     If the environment variable ``OS_DEBUG`` is set to a true value,
-    debug logging is enabled.
+    debug logging is enabled. Alternatively, the ``OS_DEBUG``
+    environment variable can be set to a valid log level.
 
     If the environment variable ``OS_LOG_CAPTURE`` is set to a true
     value, a logging fixture is installed to capture the log output.
@@ -96,38 +97,13 @@ class BaseTestCase(testtools.TestCase):
         self.useFixture(fixtures.TempHomeDir())
 
     def _set_timeout(self):
-        test_timeout = os.environ.get('OS_TEST_TIMEOUT', 0)
-        try:
-            test_timeout = int(test_timeout)
-        except ValueError:
-            # If timeout value is invalid do not set a timeout.
-            test_timeout = 0
-        if test_timeout > 0:
-            self.useFixture(fixtures.Timeout(test_timeout, gentle=True))
+        self.useFixture(timeout.Timeout())
 
     def _fake_output(self):
-        if os.environ.get('OS_STDOUT_CAPTURE') in _TRUE_VALUES:
-            stdout = self.useFixture(fixtures.StringStream('stdout')).stream
-            self.useFixture(fixtures.MonkeyPatch('sys.stdout', stdout))
-        if os.environ.get('OS_STDERR_CAPTURE') in _TRUE_VALUES:
-            stderr = self.useFixture(fixtures.StringStream('stderr')).stream
-            self.useFixture(fixtures.MonkeyPatch('sys.stderr', stderr))
+        self.output_fixture = self.useFixture(output.CaptureOutput())
 
     def _fake_logs(self):
-        level = None
-        if os.environ.get('OS_DEBUG') in _TRUE_VALUES:
-            level = logging.DEBUG
-        capture_logs = os.environ.get('OS_LOG_CAPTURE') in _TRUE_VALUES
-        if capture_logs:
-            self.logger = self.useFixture(
-                fixtures.FakeLogger(
-                    format=_LOG_FORMAT,
-                    level=level,
-                    nuke_handlers=capture_logs,
-                )
-            )
-        else:
-            logging.basicConfig(format=_LOG_FORMAT, level=level)
+        self.log_fixture = self.useFixture(log.ConfigureLogging())
 
     def create_tempfiles(self, files, ext='.conf', default_encoding='utf-8'):
         """Safely create temporary files.
@@ -150,16 +126,11 @@ class BaseTestCase(testtools.TestCase):
             else:
                 basename, contents = f
                 encoding = default_encoding
-            if isinstance(contents, six.text_type):
-                contents = contents.encode(encoding)
-            if not os.path.isabs(basename):
-                (fd, path) = tempfile.mkstemp(prefix=basename, suffix=ext)
-            else:
-                path = basename + ext
-                fd = os.open(path, os.O_CREAT | os.O_WRONLY)
-            tempfiles.append(path)
-            try:
-                os.write(fd, contents)
-            finally:
-                os.close(fd)
+            fix = self.useFixture(createfile.CreateFileWithContent(
+                filename=basename,
+                contents=contents,
+                ext=ext,
+                encoding=encoding,
+            ))
+            tempfiles.append(fix.path)
         return tempfiles
