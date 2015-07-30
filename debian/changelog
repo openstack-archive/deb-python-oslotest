@@ -1,10 +1,6 @@
 python-oslotest (1:1.9.0-1) experimental; urgency=medium
 
   [ James Page ]
-  * d/p/fixtures-1.3-compat.patch: Cherry pick fix from upstream VCS to
-    resolve compatibility with fixtures >= 1.3.1.
-  * d/p/python-3.5-compat.patch: Cherry pick fix from upstream VCS for
-    compatiblity with Python 3.5 (LP: #1475544).
   * d/p/fix-import-of-mock.patch: Dropped, as python 3.2 is no longer a
     target.
 
