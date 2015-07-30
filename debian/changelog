@@ -10,6 +10,7 @@ python-oslotest (1:1.9.0-1) experimental; urgency=medium
 
   [ Thomas Goirand ]
   * New upstream release.
+  * Fixed (build-)depends for this release.
 
  -- Thomas Goirand <zigo@debian.org>  Thu, 30 Jul 2015 15:07:14 +0000
 

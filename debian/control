@@ -17,24 +17,24 @@ Build-Depends: debhelper (>= 9),
                python3-pbr,
                python3-setuptools
 Build-Depends-Indep: python-coverage,
-                     python-fixtures,
-                     python-mock,
+                     python-fixtures (>= 1.3.1),
+                     python-mock (>= 1.3),
                      python-mox3,
                      python-oslosphinx (>= 2.5.0),
-#                     python-os-client-config,
+                     python-os-client-config (>= 1.4.0),
                      python-six (>= 1.9.0),
                      python-testscenarios,
-                     python-testtools,
-                     python3-fixtures,
-                     python3-mock,
+                     python-testtools (>= 1.4.0),
+                     python3-fixtures (>= 1.3.1),
+                     python3-mock (>= 1.3),
                      python3-mox3,
-#                     python3-os-client-config,
+                     python3-os-client-config (>= 1.4.0),
                      python3-six (>= 1.9.0),
                      python3-subunit,
                      python3-testscenarios,
-                     python3-testtools,
-                     subunit (>= 0.0.18),
-                     testrepository (>= 0.0.18)
+                     python3-testtools (>= 1.4.0),
+                     subunit,
+                     testrepository,
 Standards-Version: 3.9.6
 Vcs-Browser: http://anonscm.debian.org/gitweb/?p=openstack/python-oslotest.git
 Vcs-Git: git://anonscm.debian.org/openstack/python-oslotest.git
@@ -42,9 +42,8 @@ Homepage: http://launchpad.net/oslo
 
 Package: python-oslotest
 Architecture: all
-Pre-Depends: dpkg (>= 1.15.6~)
-Depends: python-fixtures (>= 0.3.14),
-         python-mock (>= 1.0),
+Depends: python-fixtures (>= 1.3.1),
+         python-mock (>= 1.3),
          python-mox3 (>= 0.7.0),
          python-pbr (>= 0.6),
          python-six (>= 1.9.0),
@@ -64,9 +63,8 @@ Description: OpenStack test framework - Python 2.x
 
 Package: python3-oslotest
 Architecture: all
-Pre-Depends: dpkg (>= 1.15.6~)
-Depends: python3-fixtures (>= 0.3.14),
-         python3-mock (>= 1.0),
+Depends: python3-fixtures (>= 1.3.1),
+         python3-mock (>= 1.3),
          python3-mox3 (>= 0.7.0),
          python3-pbr (>= 0.6),
          python3-six (>= 1.9.0),
@@ -86,7 +84,6 @@ Description: OpenStack test framework - Python 3.x
 Package: python-oslotest-doc
 Section: doc
 Architecture: all
-Pre-Depends: dpkg (>= 1.15.6~)
 Depends: ${misc:Depends}, ${sphinxdoc:Depends}
 Description: OpenStack test framework - doc
  OpenStack test framework that provides base classes and fixtures for creating
