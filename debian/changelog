@@ -1,3 +1,10 @@
+python-oslotest (1:1.10.0-1) experimental; urgency=medium
+
+  * New upstream release.
+  * Fixed (build-)depends for this release.
+
+ -- Ivan Udovichenko <iudovichenko@mirantis.com>  Tue, 08 Sep 2015 12:41:27 +0300
+
 python-oslotest (1:1.9.0-1) experimental; urgency=medium
 
   [ James Page ]
