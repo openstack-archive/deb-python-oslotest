@@ -1,3 +1,9 @@
+python-oslotest (1:1.11.0-1) UNRELEASED; urgency=medium
+
+  * New upstream release.
+
+ -- Corey Bryant <corey.bryant@canonical.com>  Wed, 30 Sep 2015 22:00:00 -0400
+
 python-oslotest (1:1.10.0-1) experimental; urgency=medium
 
   * New upstream release.
