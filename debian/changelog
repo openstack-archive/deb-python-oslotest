@@ -1,3 +1,10 @@
+python-oslotest (1:2.0.0-1) experimental; urgency=medium
+
+  * New upstream release.
+  * Fixed (build-)depends.
+
+ -- Thomas Goirand <zigo@debian.org>  Thu, 26 Nov 2015 15:42:27 +0100
+
 python-oslotest (1:1.11.0-2) unstable; urgency=medium
 
   * override_dh_python3 to fix Py3 shebang.
