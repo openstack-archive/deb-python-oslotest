@@ -1,8 +1,19 @@
-python-oslotest (1:1.11.0-1) experimental; urgency=medium
+python-oslotest (1:1.11.0-2) unstable; urgency=medium
 
+  * override_dh_python3 to fix Py3 shebang.
+
+ -- Thomas Goirand <zigo@debian.org>  Fri, 23 Oct 2015 23:30:21 +0000
+
+python-oslotest (1:1.11.0-1) unstable; urgency=medium
+
+  [ Corey Bryant ]
   * New upstream release.
+  * d/control: Update uploaders.
 
- -- Thomas Goirand <zigo@debian.org>  Sun, 27 Sep 2015 22:04:34 +0200
+  [ Thomas Goirand ]
+  * Uploading to unstable.
+
+ -- Thomas Goirand <zigo@debian.org>  Fri, 16 Oct 2015 10:23:25 +0000
 
 python-oslotest (1:1.10.0-1) experimental; urgency=medium
 
