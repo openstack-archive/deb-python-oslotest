@@ -15,8 +15,14 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+from debtcollector import removals
 import fixtures
 from six.moves import mock
+
+
+removals.removed_module("oslotest.mockpatch", replacement="fixtures",
+                        version="1.13", removal_version="2.0",
+                        message="Use fixtures.Mock* classes instead")
 
 
 class _Base(fixtures.Fixture):
@@ -28,11 +34,11 @@ class _Base(fixtures.Fixture):
 
 
 class PatchObject(_Base):
-    """Deal with code around mock.
+    """Deal with code around :func:`mock.patch.object`.
 
     .. py:attribute:: mock
 
-        The mock.
+        The mock as returned by :func:`mock.patch.object`.
 
     """
 
@@ -42,11 +48,11 @@ class PatchObject(_Base):
 
 
 class Patch(_Base):
-    """Deal with code around mock.
+    """Deal with code around :func:`mock.patch`.
 
     .. py:attribute:: mock
 
-        The mock.
+        The mock as returned by :func:`mock.patch`.
 
     """
 
@@ -56,12 +62,12 @@ class Patch(_Base):
 
 
 class Multiple(_Base):
-    """Deal with code around mock.patch.multiple.
+    """Deal with code around :func:`mock.patch.multiple`.
 
     Pass name=value to replace obj.name with value.
 
-    Pass name= :py:attr:`Multiple.DEFAULT` to replace obj.name with a MagicMock
-    instance.
+    Pass name= :attr:`.DEFAULT` to replace obj.name with a
+    :class:`mock.MagicMock` instance.
 
     :param obj: Object or name containing values being mocked.
     :type obj: str or object
@@ -69,12 +75,14 @@ class Multiple(_Base):
 
     .. py:attribute:: mock
 
-        The mock.
+        A :class:`dict`, where each key matches a kwarg parameter and the value
+        is the passed-in value or :class:`mock.MagicMock`.
 
     """
 
     DEFAULT = mock.DEFAULT
-    """Triggers a MagicMock to be created for a named attribute."""
+    """Triggers a :class:`mock.MagicMock` to be created for the named
+    attribute."""
 
     def __init__(self, obj, **kwargs):
         super(Multiple, self).__init__()

@@ -1,21 +1,32 @@
-Welcome to oslotest's documentation!
-====================================
-
-OpenStack test framework and test fixtures.
-
-Contents
-========
+=======================================================
+ oslotest -- OpenStack Testing Framework and Utilities
+=======================================================
 
 .. toctree::
    :maxdepth: 2
 
    installation
-   api
    testing
    features
    cross-testing
+   debugging
    resources
    contributing
+
+API
+===
+
+.. toctree::
+   :maxdepth: 1
+
+   api/autoindex
+
+Release Notes
+=============
+
+.. toctree::
+   :maxdepth: 1
+
    history
 
 Indices and tables
