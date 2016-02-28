@@ -1,7 +1,11 @@
 python-oslotest (1:2.3.0-1) UNRELEASED; urgency=medium
 
+  [ David Della Vecchia ]
   * New upstream release.
   * d/control: Align depends with upstream.
+
+  [ Ondřej Nový ]
+  * Fixed homepage (https).
 
  -- David Della Vecchia <ddv@canonical.com>  Thu, 25 Feb 2016 15:17:58 -0500
 
