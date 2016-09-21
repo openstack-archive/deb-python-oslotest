@@ -1,0 +1,9 @@
+Document: python-oslotest-doc
+Title: OsloTest Documentation
+Author: OpenStack
+Abstract: Sphinx documentation for OsloTest
+Section: Programming/Python
+
+Format: HTML
+Index: /usr/share/doc/python-oslotest-doc/html/index.html
+Files: /usr/share/doc/python-oslotest-doc/html/*

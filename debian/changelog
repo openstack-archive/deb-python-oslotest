@@ -1,4 +1,4 @@
-python-oslotest (1:2.5.0-1) UNRELEASED; urgency=medium
+python-oslotest (1:2.10.0-1) experimental; urgency=medium
 
   [ Ondřej Nový ]
   * Standards-Version is 3.9.8 now (no change)
@@ -10,7 +10,14 @@ python-oslotest (1:2.5.0-1) UNRELEASED; urgency=medium
   * d/gbp.conf: Update branch for Newton.
   * d/control: Align (Build-)Depends with upstream.
 
- -- Corey Bryant <corey.bryant@canonical.com>  Wed, 01 Jun 2016 11:10:59 -0400
+  [ David Della Vecchia ]
+  * New upstream release.
+  * d/control: Align (build-)depends with upstream.
+
+  [ Thomas Goirand ]
+  * Using OpenStack's Gerrit as VCS URLs.
+
+ -- Thomas Goirand <zigo@debian.org>  Wed, 21 Sep 2016 09:31:41 +0200
 
 python-oslotest (1:2.3.0-1) unstable; urgency=medium
 

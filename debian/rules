@@ -33,25 +33,23 @@ override_dh_python3:
 
 override_dh_auto_test:
 ifeq (,$(findstring nocheck, $(DEB_BUILD_OPTIONS)))
-	echo "Disabled tests for now"
-#	set -e ; set -x ; for i in 2.7 $(PYTHON3S) ; do \
-#		PYMAJOR=`echo $$i | cut -d'.' -f1` ; \
-#		echo "===> Testing with python$$i (python$$PYMAJOR)" ; \
-#		rm -rf .testrepository ; \
-#		testr-python$$PYMAJOR init ; \
-#		TEMP_REZ=`mktemp -t` ; \
-#		PYTHONPATH=$(CURDIR) PYTHON=python$$i testr-python$$PYMAJOR run --subunit | tee $$TEMP_REZ | subunit2pyunit || true ; \
-#		cat $$TEMP_REZ | subunit-filter -s --no-passthrough | subunit-stats || true ; \
-#		rm -f $$TEMP_REZ ; \
-#		testr-python$$PYMAJOR slowest ; \
-#	done
+	set -e ; set -x ; for i in 2.7 $(PYTHON3S) ; do \
+		PYMAJOR=`echo $$i | cut -d'.' -f1` ; \
+		echo "===> Testing with python$$i (python$$PYMAJOR)" ; \
+		rm -rf .testrepository ; \
+		testr-python$$PYMAJOR init ; \
+		TEMP_REZ=`mktemp -t` ; \
+		PYTHONPATH=$(CURDIR) PYTHON=python$$i testr-python$$PYMAJOR run --subunit | tee $$TEMP_REZ | subunit2pyunit || true ; \
+		cat $$TEMP_REZ | subunit-filter -s --no-passthrough | subunit-stats || true ; \
+		rm -f $$TEMP_REZ ; \
+		testr-python$$PYMAJOR slowest ; \
+	done
 endif
 
 override_dh_sphinxdoc:
 ifeq (,$(findstring nodocs, $(DEB_BUILD_OPTIONS)))
-	echo "Disabled docs for now"
-#	sphinx-build -b html doc/source debian/python-oslotest-doc/usr/share/doc/python-oslotest-doc/html
-#	dh_sphinxdoc -O--buildsystem=python_distutils
+	sphinx-build -b html doc/source debian/python-oslotest-doc/usr/share/doc/python-oslotest-doc/html
+	dh_sphinxdoc -O--buildsystem=python_distutils
 endif
 
 # Commands not to run
