@@ -8,7 +8,7 @@ Uploaders: Thomas Goirand <zigo@debian.org>,
            David Della Vecchia <ddv@canonical.com>,
 Build-Depends: debhelper (>= 9),
                dh-python,
-               openstack-pkg-tools (>= 0.23~),
+               openstack-pkg-tools (>= 0.52~),
                python-all,
                python-pbr,
                python-setuptools,
@@ -43,7 +43,7 @@ Build-Depends-Indep: python-coverage,
 Standards-Version: 3.9.8
 Vcs-Browser: https://git.openstack.org/cgit/openstack/deb-python-oslotest
 Vcs-Git: https://git.openstack.org/openstack/deb-python-oslotest
-Homepage: https://launchpad.net/oslo
+Homepage: https://github.com/openstack/oslotest
 
 Package: python-oslotest
 Architecture: all

@@ -1,6 +1,6 @@
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: oslotest
-Source: https://launchpad.net/oslo
+Source: https://github.com/openstack/oslotest
 
 Files: *
 Copyright: (c) 2013-2014, OpenStack foundation

@@ -1,31 +1,13 @@
 #!/usr/bin/make -f
 
-PYTHONS:=$(shell pyversions -vr)
-PYTHON3S:=$(shell py3versions -vr)
-
-UPSTREAM_GIT := https://github.com/openstack/oslo.test.git
+UPSTREAM_GIT := https://github.com/openstack/oslotest
 include /usr/share/openstack-pkg-tools/pkgos.make
-
-export OSLO_PACKAGE_VERSION=$(VERSION)
 
 %:
 	dh $@ --buildsystem=python_distutils --with python2,python3,sphinxdoc
 
 override_dh_auto_install:
-	set -e ; for pyvers in $(PYTHONS); do \
-		python$$pyvers setup.py install --install-layout=deb \
-			--root $(CURDIR)/debian/python-oslotest; \
-	done
-	set -e ; for pyvers in $(PYTHON3S); do \
-		python$$pyvers setup.py install --install-layout=deb \
-			--root $(CURDIR)/debian/python3-oslotest; \
-        done
-
-	set -e ; for i in oslo_debug_helper oslo_run_pre_release_tests oslo_run_cross_tests ; do \
-		mv $(CURDIR)/debian/python-oslotest/usr/bin/$$i $(CURDIR)/debian/python-oslotest/usr/bin/python2-$$i ; \
-		mv $(CURDIR)/debian/python3-oslotest/usr/bin/$$i $(CURDIR)/debian/python3-oslotest/usr/bin/python3-$$i ; \
-	done
-
+	pkgos-dh_auto_install
 	sed -i s/python/python3/g $(CURDIR)/debian/python3-oslotest/usr/bin/python3-oslo_debug_helper
 
 override_dh_python3:
@@ -33,17 +15,7 @@ override_dh_python3:
 
 override_dh_auto_test:
 ifeq (,$(findstring nocheck, $(DEB_BUILD_OPTIONS)))
-	set -e ; set -x ; for i in 2.7 $(PYTHON3S) ; do \
-		PYMAJOR=`echo $$i | cut -d'.' -f1` ; \
-		echo "===> Testing with python$$i (python$$PYMAJOR)" ; \
-		rm -rf .testrepository ; \
-		testr-python$$PYMAJOR init ; \
-		TEMP_REZ=`mktemp -t` ; \
-		PYTHONPATH=$(CURDIR) PYTHON=python$$i testr-python$$PYMAJOR run --subunit | tee $$TEMP_REZ | subunit2pyunit || true ; \
-		cat $$TEMP_REZ | subunit-filter -s --no-passthrough | subunit-stats || true ; \
-		rm -f $$TEMP_REZ ; \
-		testr-python$$PYMAJOR slowest ; \
-	done
+	pkgos-dh_auto_test
 endif
 
 override_dh_sphinxdoc:
