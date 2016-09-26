@@ -41,8 +41,8 @@ Build-Depends-Indep: python-coverage,
                      subunit,
                      testrepository,
 Standards-Version: 3.9.8
-Vcs-Browser: https://git.openstack.org/cgit/openstack/deb-python-oslotest
-Vcs-Git: https://git.openstack.org/openstack/deb-python-oslotest
+Vcs-Browser: https://git.openstack.org/cgit/openstack/deb-python-oslotest?h=debian%2Fnewton
+Vcs-Git: https://git.openstack.org/openstack/deb-python-oslotest -b debian/newton
 Homepage: https://github.com/openstack/oslotest
 
 Package: python-oslotest
