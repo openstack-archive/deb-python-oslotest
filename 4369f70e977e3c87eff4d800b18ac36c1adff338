@@ -1,0 +1,8 @@
+Code-Review+2: ChangBo Guo(gcb) <glongwave@gmail.com>
+Workflow+1: ChangBo Guo(gcb) <glongwave@gmail.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Wed, 25 Jan 2017 09:56:50 +0000
+Reviewed-on: https://review.openstack.org/422965
+Project: openstack/deb-python-oslotest
+Branch: refs/heads/master
